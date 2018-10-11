@@ -1,6 +1,12 @@
 package stix
 
-import "errors"
+import (
+  "errors"
+  "github.com/google/uuid"
+  "strings"
+  "fmt"
+)
+
 
 type StixObject interface {
   IsValid() (bool, error)
@@ -49,3 +55,13 @@ func (er *ExternalReference) IsValid() (bool, error){
 
   return result,err
 }
+
+type ObjectIdentifier string
+
+func CreateID(objectType string) (id ObjectIdentifier){
+  var buf strings.Builder
+  fmt.Fprintf(&buf, "%s--%s", objectType, uuid.New().String())
+  id = ObjectIdentifier(buf.String())
+  return
+}
+
