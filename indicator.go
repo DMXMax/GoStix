@@ -18,6 +18,6 @@ func Test(){
 }
 
 func (item *Indicator) Initialize(){
-  (*item).Type = INDICATOR 
+  (*item).Type = "indicator"
   (*item).Id = NewObjectId((item).Type)
 }

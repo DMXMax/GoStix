@@ -1,7 +1,7 @@
 package stix
 
 import (
-  "strings"
+ // "strings"
 )
 
 
@@ -24,6 +24,6 @@ type TestCommon struct{
 }
 
 func (tc *TestCommon) Initialize(){
-  (*tc).Type = strings.ToLower(TEST)
+  (*tc).Type = "testObject"
   (*tc).Id = NewObjectId((*tc).Type)
 }

@@ -1,6 +1,11 @@
 package stix
 
-  const ( 
-    TEST="testcommon"
-    INDICATOR="indicator"
-  )
+type DomainObjectType string
+
+var DomainObjects = struct{
+  TEST DomainObjectType
+  INDICATOR DomainObjectType
+}{
+  "testcommon",
+  "indicator",
+}
