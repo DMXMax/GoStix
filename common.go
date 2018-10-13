@@ -23,7 +23,7 @@ type TestCommon struct{
   Testfield string
 }
 
-func (tc *TestCommon) Initialize(typeName string){
-  (*tc).Type = strings.ToLower(typeName)
-  (*tc).Id = NewObjectId(typeName)
+func (tc *TestCommon) Initialize(){
+  (*tc).Type = strings.ToLower(TEST)
+  (*tc).Id = NewObjectId((*tc).Type)
 }

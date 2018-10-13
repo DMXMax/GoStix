@@ -15,7 +15,7 @@ func NewObjectId(objectType string) ObjectIdentifier{
   return ObjectIdentifier(buf.String())
 }
 
-func (o *ObjectIdentifier) IsValid() (err error){
+func (o *ObjectIdentifier) IsValid() (isValid bool, err error){
   err = nil
   strs := strings.Split(string(*o),"--")
   if len(strs)<2{ // we need an object type and a uuid
@@ -23,5 +23,6 @@ func (o *ObjectIdentifier) IsValid() (err error){
   }else{
     _,err = uuid.Parse(strs[1])//the second part should be the uuid
   }
+  isValid = (err==nil)
   return
 }

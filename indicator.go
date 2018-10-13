@@ -6,12 +6,7 @@ type KillChainPhase struct{
 }
 
 type Indicator struct{
-  Type string `json:"type"`
-  Id string `json:"id"`
-  CreatedByRef string `json:"created_by_ref,omitempty"`
-  Created string `json:"created"`
-  Modified string `json:"modified"`
-  Labels []string `json:"labels"`
+  Common
   Name string `json:"name,omitempty"`
   Pattern string `json:"pattern"`
   ValidFrom string `json:"valid_from"`
@@ -20,4 +15,9 @@ type Indicator struct{
   KillChainPhases []KillChainPhase `json:"kill_chain_phases,omitempty"`
 }
 func Test(){
+}
+
+func (item *Indicator) Initialize(){
+  (*item).Type = INDICATOR 
+  (*item).Id = NewObjectId((item).Type)
 }
