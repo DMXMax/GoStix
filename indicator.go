@@ -25,7 +25,7 @@ func (item *Indicator) Initialize() {
 	(*item).Id = NewObjectId((item).Type)
 }
 
-func (item *Indicator) Valid() (bool, error, error) {
+func (item *Indicator) Valid() (bool, []error, []error) {
 	return true, nil, nil
 }
 

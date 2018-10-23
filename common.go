@@ -28,7 +28,7 @@ func (tc *TestCommon) Initialize() {
 	(*tc).Id = NewObjectId((*tc).Type)
 }
 
-func (tc *TestCommon) Valid() (bool, error, error) {
+func (tc *TestCommon) Valid() (bool, []error, []error) {
 	return true, nil, nil
 }
 
